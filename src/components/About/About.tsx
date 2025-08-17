@@ -5,9 +5,9 @@ import PhotoGallery from "./commponents/PhotoGallery/PhotoGallery";
 import Biography from "./commponents/Biography/Biography";
 import ContactInfo from "./commponents/ContactInfo/ContactInfo";
 import Skills from "./commponents/Skills/Skills";
-import { BACKEND, FRONTEND } from "@/constants";
+import { BACKEND, COMPONENTS_IDS, FRONTEND } from "@/constants";
 
-const AboutComponent = ()=>{
+const About = ()=>{
     const [frontend, setFrontend] = useState(true);
     const [backend, setBackend] = useState(false);
     const backendRef = useRef(null)
@@ -21,7 +21,7 @@ const AboutComponent = ()=>{
     } 
 
  return(<>
-    <section className="pt-1 projects-gradient" id="about">
+    <section className="pt-1 projects-gradient" id={COMPONENTS_IDS.ABOUT}>
         <div className="container xl:px-10 mx-auto">
             <div className="flex flex-1 sm:block md:flex flex-col-reverse sm:flex-row-reverse md:justify-end md:items-center">
               <PhotoGallery/>
@@ -54,4 +54,4 @@ const AboutComponent = ()=>{
  </>)
 }
 
-export default AboutComponent
+export default About

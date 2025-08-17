@@ -1,8 +1,9 @@
 import { Reveal } from "@/common/Reveal/Reveal"
+import { COMPONENTS_IDS, FOOTER_QUOTE, FOOTER_TEXT, NAVBAR_LINKS } from "@/constants"
 
-const FooterComponent = ()=>{
+const Footer = ()=>{
     return(<>
-    <section id="footer">
+    <section id={COMPONENTS_IDS.CONTACT}>
       <div className="container mx-auto">
         <footer className=" bg-[rgba(120,119,198,0.1)] sm:rounded-t-3xl p-10 xl:p-14">
           <div className="flex items-center justify-center">
@@ -13,7 +14,9 @@ const FooterComponent = ()=>{
               <div className="relative z-10">
                 <Reveal>
                   <p className="text-gray-500 text-sm md:text-base text-center"><em>
-                  Quality is a product of a conflict between programmers and testers. ― Yegor Bugayenk
+                  {
+                    FOOTER_QUOTE
+                  }
                   </em></p>
                 </Reveal>
               </div>
@@ -23,35 +26,17 @@ const FooterComponent = ()=>{
           <div className="flex flex-1 items-start justify-between pt-2">
             <div className="text-xs text-gray-600 me-2">
             <Reveal>
-              © Błażej Federowicz Inc. All Rights Reserved {new Date().getFullYear()}
+              {FOOTER_TEXT}
             </Reveal>
             </div>
             <div className="text-xs flex flex-wrap gap-[1px] justify-end text-gray-600 ms-2">
-              <a href="#home" className="me-2  cursor-pointer underline-offset-4 hover:underline active:underline">
-              <Reveal>
-                Home
-              </Reveal>  
-              </a>
-              <a href="#about" className="me-2  cursor-pointer underline-offset-4 hover:underline active:underline">
-                <Reveal>
-                  About
-                </Reveal>
-              </a>
-              <a href="#projects" className="me-2  cursor-pointer underline-offset-4 hover:underline active:underline">
-              <Reveal>
-                Projects
-              </Reveal>
-              </a>
-              <a href="#expiriance" className="me-2  cursor-pointer underline-offset-4 hover:underline active:underline">
-              <Reveal>
-                Expertise
-              </Reveal>
-              </a>
-              <a href="#contact" className="cursor-pointer  underline-offset-4 hover:underline active:underline">
-              <Reveal>
-                Contact
-              </Reveal>
-              </a>
+              {NAVBAR_LINKS.map((link, index) => (
+                <a key={`navbarLink-${index}`} href={link.href} className={`${index !== NAVBAR_LINKS.length-1 && "me-2"}  cursor-pointer underline-offset-4 hover:underline active:underline`}>
+                  <Reveal>
+                    {link.name}
+                  </Reveal>
+                </a>
+              ))}
             </div>
           </div>
         </footer>
@@ -60,4 +45,4 @@ const FooterComponent = ()=>{
     </>)
    }
    
-   export default FooterComponent
+   export default Footer

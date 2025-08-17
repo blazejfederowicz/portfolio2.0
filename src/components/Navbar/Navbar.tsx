@@ -8,7 +8,7 @@ import PopUp from "./components/PopUp/PopUp";
 import MobileLinks from "./components/MobileLinks/MobileLinks";
 import useNavbar from "@/customHooks/useNavbar/useNavbar";
 
-const NavbarComponent = ()=>{
+const Navbar = ()=>{
     const { menuOpen, setMenuOpen, isScrolled, showMenu, navRef } = useNavbar();
 
     return(<>
@@ -40,4 +40,4 @@ const NavbarComponent = ()=>{
     </>)
    }
    
-   export default NavbarComponent
+   export default Navbar

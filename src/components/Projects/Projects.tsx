@@ -1,12 +1,13 @@
 "use client"
-import FeatureComponent from './FeatureComponent'
+import FeatureComponent from './components/FeatureComponent/FeatureComponent'
 import {motion, useScroll, useTransform } from 'motion/react'
 import { useRef } from 'react'
-import { ImageSlider } from "../ImageSlider/ImageSlider"
+import { ImageSlider } from "./components/ImageSlider/ImageSlider"
 import { Reveal } from '@/common/Reveal/Reveal'
 import { HighlightStart } from '@/common/Highlight/Highlight'
+import { COMPONENTS_IDS } from '@/constants'
 
-const ProjectsComponent=()=>{
+const Projects=()=>{
     const ref = useRef(null)
     const {scrollYProgress} = useScroll({
         target:ref,
@@ -20,7 +21,7 @@ const ProjectsComponent=()=>{
 
     return( 
         <motion.div ref={ref} className='' style={{background:bgColor}}>
-            <section id='projects' className="w-full min-h-[150vh] relative  border-t-[1px] border-t-zinc-400 ">
+            <section id={COMPONENTS_IDS.PROJECTS} className="w-full min-h-[150vh] relative  border-t-[1px] border-t-zinc-400 ">
             <div className="absolute bg-gradient-to-r from-gray-50 to-30% to-transparent top-0 left-0 w-full -translate-y-2 h-4"></div>
             <div className="absolute bg-gradient-to-l from-gray-50 to-transparent to-30% top-0 right-0 w-full -translate-y-2 h-4"></div>
             <div className="mx-auto grid grid-cols-1 lg:grid-cols-2 max-w-[1900px] px-5 sm:px-10 pt-10 md:py-20 bg-gradient-to-b from-gray-50 to-transparent md:px-20 ">
@@ -47,4 +48,4 @@ const ProjectsComponent=()=>{
         )
 }
 
-export default ProjectsComponent
+export default Projects

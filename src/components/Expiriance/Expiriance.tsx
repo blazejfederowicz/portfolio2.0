@@ -1,13 +1,13 @@
 import {  HighlightStart } from "@/common/Highlight/Highlight";
 import { Reveal } from "@/common/Reveal/Reveal";
-import { EDUCATION_TITLE, EXPERIENCE_TITLE } from "@/constants";
+import { COMPONENTS_IDS, EDUCATION_TITLE, EXPERIENCE_TITLE } from "@/constants";
 import FetchExperience from "./components/FetchExperience/FetchExperience";
 import { getEducation, getExperience } from "@/services";
 
-const ExpirianceComponent = ()=>{
+const Expiriance = ()=>{
     return(
         <>
-            <section id="expiriance" className="container mx-auto px-5 sm:px-6 lg:px-8 pb-20 md:pb-32">
+            <section id={COMPONENTS_IDS.EXPIRIANCE} className="container mx-auto px-5 sm:px-6 lg:px-8 pb-20 md:pb-32">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-lg lg:max-w-5xl mx-auto">
                     <div className="space-y-6 mb-10 lg:mb-0">
                         <Reveal>
@@ -29,4 +29,4 @@ const ExpirianceComponent = ()=>{
     )
 };
 
-export default ExpirianceComponent;
+export default Expiriance;

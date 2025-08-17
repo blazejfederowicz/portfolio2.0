@@ -32,6 +32,13 @@ export const NAVBAR_LINKS = [
     {name: "Expertise", href: "#expiriance"},
     {name: "Contact", href: "#contact"},
 ];
+export const COMPONENTS_IDS = {
+    HOME: "home",
+    ABOUT: "about",
+    PROJECTS: "projects",
+    EXPIRIANCE: "expiriance",
+    CONTACT: "contact",
+}
 
 export const SOCIAL_LINKS = [
     {name: "Github", href: "https://github.com/blazejfederowicz", icon: "bi bi-github"},
@@ -110,3 +117,42 @@ export const ERROR_MESSAGES = {
 export const EXPERIENCE_TITLE =<><span className="font-bold">Professional</span> Experience</>;
 export const EDUCATION_TITLE = "Education"
 
+// Footer
+export const FOOTER_TEXT = "© Błażej Federowicz Inc. All Rights Reserved " + new Date().getFullYear()
+export const FOOTER_QUOTE = "Quality is a product of a conflict between programmers and testers. ― Yegor Bugayenk"
+
+//Contact
+export const CONTACT_TITLE = "Contact Information"
+export const CONTACT_TEXT = (<><span className="font-bold">Contact</span> Me</>)
+export const CONTACT_LOCATION = "Pomorskie, Poland"
+export const LOCATION_TEXT = "Location"
+export const CONTACT_MESSAGE = "Send Me a Message"
+export const CONTACT_EMAIL = "Email"
+export const CONTACT_EMAIL_ADDRESS = "blazejfederowicz@gmail.com"
+export const CONTACT_SOCIALS = "Social Profiles"
+export const CONTACT_SEND = "Send Message"
+export const CONTACT_SOCIAL_LINKS = [
+  {href:"https://github.com/blazejfederowicz", icon:"bi bi-github"},
+  {href:"https://www.linkedin.com/in/błażej-federowicz-6a25b0320/", icon:"bi bi-linkedin"},
+  {href:"mailto:blazejfederowicz@gmail.com", icon:"bi bi-envelope"}
+]
+export const CONTACT_FORM = [
+  {label: "Name", attr: "name", placeholder: "Your name"},
+  {label: "Email", attr: "email", placeholder: "your.email@example.com"},
+  {label: "Title", attr: "title", placeholder: "Your title"},
+  {label: "Message", attr: "message", placeholder: "Your message"}
+]
+
+// Reducer
+export const enum ACTION_TYPES {
+  INPUT_CHANGE= "INPUT_CHANGE",
+  SET_ERROR= "SET_ERROR",
+  CLEAR_FORM= "CLEAR_FORM",
+  SET_PENDING= "SET_PENDING",
+  SET_FULLFIELD= "SET_FULLFIELD",
+  SET_REJECTED= "SET_REJECTED"
+}
+
+export const ERROR_MESSAGE = (name:string) => `Valid ${name} is required`
+export const FULLFIELD_MESSAGE = "Message sent!"
+export const REJECTED_MESSAGE = "Something went wrong, please try again later"

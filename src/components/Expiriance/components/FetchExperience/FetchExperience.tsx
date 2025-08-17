@@ -18,7 +18,6 @@ export default function FetchExperience({fetch}: FetchExperienceProps) {
             </RegularBox>
         );
     } else if(data){
-        console.log(data);
         return Array.isArray(data) && data.map((item, index) => (
             index !== 0 ? 
                 <Reveal key={`container-${item.id}`}>

@@ -1,5 +1,5 @@
 import { Reveal } from "@/common/Reveal/Reveal";
-import HeroSectionCode from "../../common/Code/HeroSectionCode"
+import HeroSectionCode from "../../../../common/Code/HeroSectionCode"
 import { useTransform, motion, MotionValue } from "motion/react"
 import Image from "next/image";
 import { ASSET_PATHS } from "@/constants";
@@ -13,7 +13,7 @@ const FeatureComponent = ({scroll}:{scroll:MotionValue<number>})=>{
 
 
     return(<>
-    <section id="projects" className="mt-32">
+    <section className="mt-32">
       <div className=" pb-32">
         <div className="mx-auto max-w-xl px-5 lg:max-w-5xl lg:px-8">
           <Reveal custom="overflow-hidden">

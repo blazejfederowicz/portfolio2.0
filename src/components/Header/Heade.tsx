@@ -1,14 +1,14 @@
 "use client"
-import NavbarComponent from "../Navbar/NavbarComponent"
+import NavbarComponent from "../Navbar/Navbar"
 import { useRef, useState } from "react"
 import { Reveal } from "@/common/Reveal/Reveal";
 import Image from "next/image";
-import { ASSET_PATHS, FIRST_NAME, LAST_NAME, WORK_TITLE } from "@/constants";
+import { ASSET_PATHS, COMPONENTS_IDS, FIRST_NAME, LAST_NAME, WORK_TITLE } from "@/constants";
 import ResumeButton from "@/common/ResumeButton/ResumeButton";
 import ProjectsButton from "@/common/ProjectsButton/ProjectsButton";
 import ProfilePicture from "./components/ProfilePicture/ProfilePicture";
 
-const HeaderComponent = ()=>{
+const Header = ()=>{
     const downloadLink = useRef<HTMLAnchorElement | null>(null)
     const buttonRef = useRef<HTMLButtonElement | null>(null)
     const [isBlurred, setIsBlurred] = useState(false);
@@ -25,7 +25,7 @@ const HeaderComponent = ()=>{
     }
 
     return(<>
-    <section id="home" className=" custom-container bg-neutral-800 w-full 2xl:h-lvh relative">
+    <section id={COMPONENTS_IDS.HOME} className=" custom-container bg-neutral-800 w-full 2xl:h-lvh relative">
        <NavbarComponent/>
        <div className="gradient hidden sm:block absolute w-[75em] h-[39em] -top-[25em] -right-[35em]"></div>
         <div className="flex w-full flex-col h-full">
@@ -65,4 +65,4 @@ const HeaderComponent = ()=>{
     </>)
    }
    
-   export default HeaderComponent
+   export default Header
